@@ -32,5 +32,11 @@ sed全称是stream editor，就是个流编辑器，是Unix常见的命令行程
 
 [GNU Coreutils](http://www.gnu.org/software/coreutils/)安装了大部分GNU的软件，包括wc，date等，但是因为不包括sed，所以还得跟上后边一句。软件安装以后都会在软件名称的基础上加上`g`的前缀。
 
-如果每次都
+如果每次都输入`gsed`的话还是比较麻烦的，并且兼容性上依然存在问题，每次使用Linux的人还是得和你不同的版本的脚本才可以。这样我们可以在`~/.bash_profile`上添加以下代码
+
+	PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+	ln -s $(which gsed) $(brew --prefix coreutils)/libexec/gnubin/sed
+
+这样完成之后source下`~/.bash_profile`就可以在Mac OS X上使用GNU版本的sed了，不过其他的软件的已经安装，不过还是有`g`的前缀，所以根据自己需求调整吧。
+
 
