@@ -7,11 +7,11 @@ tags: [sed]
 ---
 {% include JB/setup %}
 
-现在越来越多的程序员开始转型到Mac OSX，我也是其中一个。之所以投入Mac的阵营的原因有很多，但是好看的UI以及能够相对比较完美的使用shell应该是很多人的重要理由。既然每个程序员都会使用shell，那么sed应该是其中必不可少的一个之一了。
+现在越来越多的程序员开始转型到Mac OSX，我也是其中一个。之所以投入Mac的阵营的原因有很多，但是好看的UI以及能够相对比较完美的使用shell应该是很多人的重要理由。既然每个程序员都会使用shell，那么sed应该是其中必不可少的一个了。
 
-sed全称是stream editor，就是个流编辑器，是Unix常见的命令行程序，主要用于解析和转换文本，如果想看详细介绍的话，参看[sed wiki](http://en.wikipedia.org/wiki/Sed)。sed是有多个分支的，最原始的版本就是贝尔实验室的版本，作者是[Lee E. McMahon](http://en.wikipedia.org/wiki/Lee_E._McMahon)，然后BSD和GNU都分别是一个，应该还有其他的，我也没太仔细考证。
+sed全称是stream editor，流编辑器，是Unix常见的命令行程序，主要用于解析和转换文本，如果想看详细介绍的话，参看[sed wiki](http://en.wikipedia.org/wiki/Sed)。sed是有多个分支的，最原始的版本就是贝尔实验室的版本，作者是[Lee E. McMahon](http://en.wikipedia.org/wiki/Lee_E._McMahon)，然后BSD和GNU都分别是一个，应该还有其他的，我也没太仔细考证。
 
-只是看标题的话，其实自己都感觉有点标题党了。上面提到了sed是有多个分支的，由于Mac OSX使用了FreeBSD的内核，所以Mac OSX默认使用的是BSD sed，那么与大部分Linux默认使用的GNU sed是不太一样的。例如我们要替换file文件的所有ss为dd这个功能，如果我们在Ubuntu上我们可以如下写：
+只是看标题的话，其实自己都感觉有点标题党了，其实也无非就是想说一件事，就是Mac没使用GNU的sed给我们工作还是带了了少许不便吧，毕竟大家还是GNU的sed是使用的最多的。上面提到了sed是有多个分支的，由于Mac OSX使用了FreeBSD的内核，所以Mac OSX默认使用的是BSD sed，那么与大部分Linux默认使用的GNU sed是不太一样的。例如我们要替换file文件的所有ss为dd这个功能，如果我们在Ubuntu上我们可以如下写：
 
 	sed -i 's/ss/dd/g' file
 	
