@@ -226,4 +226,4 @@ Employee的例子可以非常好的来解释这两个概念。首先我们写一
 
 ## 附
 
-* `内在顺序`的翻译引用自[<Effective Java>](http://book.douban.com/subject/3360807/)中文版的翻译
+* `内在顺序`的翻译引用自[Effective Java](http://book.douban.com/subject/3360807/)中文版的翻译
