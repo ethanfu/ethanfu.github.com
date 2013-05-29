@@ -27,19 +27,19 @@ Java Comparators and Comparables?他们是什么？我们为什么要用他们�
 
 ## Comparable
 
-一个comparable对象用于自己和另外的对象做对比。它本身必须实现java.lang.Comparable的接口，为了能够对比其他的示例。
+一个实现了comparable接口的对象的实例可以被用于和相同对象的不同实例做对比。它本身必须实现java.lang.Comparable的接口，这样它就拥有了对比的能力。
 
 ## Comparator
 
-一个comparator对象能够对比不同的对象。它不能用于同一个类的不同示例的对比，但是可以用于其他的类的示例做对比。它必须实现java.util.Comparator的接口。
+一个实现了comparator接口的对象能够对比不同的对象。它不能用于同一个类的不同实例的对比，但是可以用于其他的类的实例做对比。它必须实现java.util.Comparator的接口。
 
 ## 我们需要对比对象么？
 
-最简单的答案就是需要对比。当有一个对象的列表的时候，在有些情况下你必须把这些对象按照不同的排序规则来排序。举例来说：考虑一个web页面需要显示职工的列表。通常情况下职工列表是按照职工的ID来排序。同样也可以根据姓名或者年龄来排序。在这些情况下这两个概念就非常便于使用了。
+最简单的答案就是需要对比。当有一个对象的列表的时候，在有些情况下你必须把这些对象按照不同的排序规则来排序。举例来说：考虑一个web页面需要显示职工的列表。通常情况下职工列表是按照职工的ID来排序。同样也可以根据姓名或者年龄来排序。在这些情况下有了这两个概念就会非常便于实现这个功能。
 
 ## 如何使用
 
-在Java中有两个接口来实现Comparable和Comparator，每一个都有一个用户必须实现的接口。分别是：
+在Java中有两个接口来实现Comparable和Comparator，每一个对象都有一个必须实现的接口。分别是：
 
 **java.lang.Comparable: int compareTo(Object o1)**
 
@@ -74,7 +74,7 @@ Employee的例子可以非常好的来解释这两个概念。首先我们写一
 		// getters & setters
 	}
 	
-下面我们将创建一个Employees列表，用来处理不同的排序需求。在下面的代码中Employees比较随意的被add到一个List中。
+下面我们将使用一个工具类来构造一个Employees List，我们会对这个List处理不同的排序需求来演示。在下面的代码中Employees比较随意的被add到一个List中。
 
 	import java.util.*;
 
@@ -97,7 +97,7 @@ Employee的例子可以非常好的来解释这两个概念。首先我们写一
 		}
 	}
 ## 内在顺序（natural ordering）排序
-职员的内在排序将根据Employee的id来排序。所以上面的Employee的类必须追加可以对比的能力，如下面代码所示：
+职员的内在排序将根据Employee的id来排序。所以上面的Employee的类必须有可以对比的能力，如下面代码所示：
 
 	public class Employee implements Comparable<Employee> {
 		private int empId;
@@ -147,7 +147,7 @@ Employee的例子可以非常好的来解释这两个概念。首先我们写一
 	6 Bill 34
 	7 Simp 8
 	8 Lee 40
-我们通过输出可以看到的是，这个列表是根据employee的id来完成的排序。因为employee的id是个int值，所以这些employee的实例就按照1-8完成了排序。
+我们通过输出可以看到的是，这个列表是根据employee的id来完成的排序。因为employee的id是个int值，所以这些employee的实例就按照id从小到大的顺序完成了排序。
 ## 根据其他字段排序
 
 如果你需要根据employee的其他字段来进行排序，我们需要修改Employee的类的compareTo()方法。但是我们也会因此而失去基于Employee的ID的排序机制。如果我们在不同的场合需要有不同的字段来进行排序的话，这样使用可能不是一个好的选择。但是不要担心；Comparator可以帮助我们。
@@ -166,7 +166,7 @@ Employee的例子可以非常好的来解释这两个概念。首先我们写一
 
 **注意**这里的使用的是String类的compareTo()方法比较name字段（字段也是字符串）。
 
-我们现在可以测试下这个排序的机制，你必须使用`Collections.sort(List, Comparator)`这个方法，而不是使用`Collections.sort(List)`方法。现在按照下面的代码来改造下TestEmployeeSort这个类，我们可以看下EmpSortByName comparator的方式的内部的排序方法是怎样的。
+我们现在可以测试下这个排序的机制，你必须使用`Collections.sort(List, Comparator)`这个方法，而不是使用`Collections.sort(List)`方法。现在根据下面的代码来改造下TestEmployeeSort这个类，我们可以看下EmpSortByName comparator的方式的内部的排序方法是怎样的。
 
 	import java.util.*;
 
@@ -202,7 +202,7 @@ Employee的例子可以非常好的来解释这两个概念。首先我们写一
 	3 Michel 10
 	7 Simp 8
 	
-检查Employees的排序是否已经按照name的字段进行了正确的排序。你看到输出的结果应该是按照字母排好序的。
+检查Employees的排序是否已经按照name字段进行了正确的排序。你看到输出的结果应该是按照字母排好序的。
 
 ### Sorting by empId field
 
