@@ -57,7 +57,7 @@ Java Comparators and Comparables?他们是什么？我们为什么要用他们�
 * zero – o1等于o2
 * negative – o1小于o2
 
-`java.util.Collections.sort(List)` 和 `java.util.Arrays.sort(Object[])` 方法被用来排列使用内在排序（natural ordering）方式的对象。(译者注：可参见[java.util.List#sort()](http://docs.oracle.com/javase/6/docs/api/java/util/Collections.html#sort(java.util.List\)) )
+`java.util.Collections.sort(List)` 和 `java.util.Arrays.sort(Object[])` 方法被用来排列使用内在排序（natural ordering）方式的对象。(译者注：可参见[java.util.List#sort()][1] )
 
 `java.util.Collections.sort(List, Comparator)` 和 `java.util.Arrays.sort(Object[], Comparator)`方法在Comparator如果可供比较的时候会被用到。 
 
@@ -225,5 +225,7 @@ Employee的例子可以非常好的来解释这两个概念。首先我们写一
 如果你有对这些概念有什么问题，请在下面进行评论，我也会尽快回复您的。
 
 ## 附
-
+   
 * `内在顺序`的翻译引用自[Effective Java](http://book.douban.com/subject/3360807/)中文版的翻译
+
+[1]: http://docs.oracle.com/javase/6/docs/api/java/util/Collections.html#sort(java.util.List)
