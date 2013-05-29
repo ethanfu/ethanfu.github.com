@@ -48,9 +48,18 @@
 
     <div class="container-narrow">
 
-      <div class="content">
+      <div class="content" style="float:left;">
         {{ content }}
       </div>
+  	  <div style="width:300px;float:right;">
+  		  <div>
+          <div>Links</div>
+          <ul>
+            <li><a href="http://www.uniorder.com">流水无心的Blog</a></li>
+        </ul>
+        </div>
+  	  </div>
+	    <div style="clear:both;"></div>
       <hr>
       <footer>
         <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}
