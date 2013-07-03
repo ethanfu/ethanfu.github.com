@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Tex中插入外部URL作为参考资料"
+title: "Tex中插入外部URL作为参考文献"
 description: ""
 category: tool
 tags: [tex]
