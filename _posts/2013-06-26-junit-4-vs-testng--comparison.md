@@ -304,7 +304,7 @@ XML 文件
 使用XML文件初始化数据可以很方便，但是测试偶尔需要复杂的类型，一个String或原始值并不能完全满足。 TestNG 的@ DataProvider的注解，可以更好的把复杂的参数类型映射到一个测试方法来处理这种情况。
 
 
-@DataProvider 可以使用 Vector, String 或者 Integer 类型的值作为参数
+`@DataProvider` 可以使用 Vector, String 或者 Integer 类型的值作为参数
 
 	@Test(dataProvider = "Data-Provider-Function")
 	public void parameterIntTest(Class clzz, String[] number) {
@@ -316,12 +316,13 @@ XML 文件
 	@DataProvider(name = "Data-Provider-Function")
 	public Object[][] parameterIntTestProvider() {
 		return new Object[][]{
-				   {Vector.class, new String[] {"java.util.AbstractList", "java.util.AbstractCollection"}},
-				   {String.class, new String[] {"1", "2"}},
-				   {Integer.class, new String[] {"1", "2"}}
-				  };
+		   {Vector.class, new String[] {"java.util.AbstractList", "java.util.AbstractCollection"}},
+		   {String.class, new String[] {"1", "2"}},
+		   {Integer.class, new String[] {"1", "2"}}
+		};
 	}
-@DataProvider 作为对象的参数
+	
+`@DataProvider` 作为对象的参数
 
 P.S “TestNGTest6_3_0” 是一个简单的对象，使用了get和set方法。
 
