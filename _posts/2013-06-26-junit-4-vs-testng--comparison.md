@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JUnit 4 与 TestNG 对比"
+title: "JUnit 4 与 TestNG 对比（翻译）"
 description: "compare two java unit test framework"
 category: Java
 tags: [test,java]
