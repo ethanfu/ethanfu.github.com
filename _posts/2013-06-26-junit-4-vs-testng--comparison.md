@@ -5,11 +5,11 @@ description: "compare two java unit test framework"
 category: Java
 tags: [test,java]
 ---
-这两天在看一本书[《Java测试新技术TestNG和高级概念》](http://book.douban.com/subject/3261693/)，作者是TestNG的创始人，了解了不少关于TestNG的知识，看了一篇文章基本把这本书的几个观点都体现了，那就直接翻译了原文就好了，省得自己总结了，这两天要不是等原作者的授权的话可能周末本文就发布了，没经过人家许可翻译人家文章应该的确也不是什么光彩的事情，等等无妨。原文链接[JUnit 4 Vs TestNG – Comparison](http://www.mkyong.com/unittest/junit-4-vs-testng-comparison/)，非常感谢作者写出好文，不过mkyong先生写了的确好多文章，经常搜个文章google第一篇总是他的。如果有翻译问题，请拍砖。
+这两天在看一本书[《Java测试新技术TestNG和高级概念》](http://book.douban.com/subject/3261693/)，作者是 TestNG 的创始人，了解了不少关于 TestNG 的知识，看了一篇文章基本把这本书的几个观点都体现了，那我就直接翻译原文就好，省得自己总结。这两天要不是等原作者的授权的话可能周末本文就发布了，没经过人家许可翻译人家文章应该的确也不是什么光彩的事情，等等无妨。原文链接[JUnit 4 Vs TestNG – Comparison](http://www.mkyong.com/unittest/junit-4-vs-testng-comparison/)，非常感谢作者写出好文，不过[mkyong](http://www.mkyong.com/author/mkyong/)先生写了的确好多文章，经常搜个文章 google 第一篇总是他的。如果有翻译问题，请拍砖。
 
 ————————————————————————————————————————————————
 
-Junit 4 和 TestNG 都是Java方面非常流行的单元测试框架。在功能上两个框架都非常类似。到底哪个比较好？在Java项目中我们应该选择哪个框架？
+Junit 4 和 TestNG 都是 Java 方面非常流行的单元测试框架。在功能上两个框架都非常类似。到底哪个比较好？在Java项目中我们应该选择哪个框架？
 
 下图将会对Junit 4 和 TestNG 做个功能特征的对比。
 
