@@ -5,7 +5,7 @@ description: "compare two java unit test framework"
 category: Java
 tags: [test,java]
 ---
-这两天在看一本书，作者是TestNG的创始人，了解了不少关于TestNG的知识，看了一篇文章基本把这本书的几个观点都体现了，那就直接翻译了原文就好了，省得自己总结了，原文链接[JUnit 4 Vs TestNG – Comparison](http://www.mkyong.com/unittest/junit-4-vs-testng-comparison/)，感谢作者。如果有翻译问题，请拍砖。
+这两天在看一本书[《Java测试新技术TestNG和高级概念》](http://book.douban.com/subject/3261693/)，作者是TestNG的创始人，了解了不少关于TestNG的知识，看了一篇文章基本把这本书的几个观点都体现了，那就直接翻译了原文就好了，省得自己总结了，这两天要不是等原作者的授权的话可能周末本文就发布了，没经过人家许可翻译人家文章应该的确也不是什么光彩的事情，等等无妨。原文链接[JUnit 4 Vs TestNG – Comparison](http://www.mkyong.com/unittest/junit-4-vs-testng-comparison/)，非常感谢作者写出好文，不过mkyong先生写了的确好多文章，经常搜个文章google第一篇总是他的。如果有翻译问题，请拍砖。
 
 ————————————————————————————————————————————————
 
