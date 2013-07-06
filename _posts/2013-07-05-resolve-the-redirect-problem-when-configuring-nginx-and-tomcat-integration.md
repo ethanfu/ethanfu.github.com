@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "解决nginx和tomcat集成后发生的重定向的问题"
+title: "nginx和tomcat集成后发生的重定向问题分析和解决"
 description: ""
 category: config
 tags: [tomcat,nginx,配置]
