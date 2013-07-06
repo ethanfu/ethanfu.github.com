@@ -11,7 +11,7 @@ Tomcat前端配置一个HTTP服务器应该是大部分应用的标配了，基�
 
 先把问题说清楚，前端nginx占用81端口，因为80干了别的，暂时懒得停80的应用，暂时修改为81端口而已。然后Tomcat占用8080端口，具体配置如下（只是截取了server中的一段）：
 
-	localtion /app1/ {
+	location /app1/ {
 		index index.jsp index.html index.html index.shtml;
 		proxy_pass http://localhost:8080/app1/;
 		
