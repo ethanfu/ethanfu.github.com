@@ -85,7 +85,8 @@ Tomcat 的方式就直接先来个代码展示下对负值的处理方式：
         }
     }
     
- 这个地方足矣说明和 jetty 的不同了，估计对相等的情况和 jetty 应该差不多，这里就暂时不介绍了。
+ 这个地方足矣说明和 jetty 的不同了，对相等的情况的处理和 jetty 也不是一样的实现，Tomcat 的实现就是把每个有相同值的放到一个 ArrayList 里面，然后把每个 list 放入到 TreeMap 中，最后两个 while 遍历就可以了，对相同情况的处理应该基本就是按照声明的情况了，本身这个实现无关痛痒的，毕竟你声明的一样的值，其实谁先谁后本身对你的设计来说就是无关痛痒的。
+ 
 ### WebLogic
 WebLogic由于是不是开源的项目，代码肯定是看不了了，只能从官方文档来了解了，参照[WebLogic 8.1](http://docs.oracle.com/cd/E13222_01/wls/docs81/webapp/web_xml.html#1039287)，其中如下描述：
 >WebLogic Server initializes this servlet when WebLogic Server starts up. The optional content of this element must be a positive integer indicating the order in which the servlet should be loaded. Lower integers are loaded before higher integers. If no value is specified, or if the value specified is not a positive integer, WebLogic Server can load the servlet in any order during application startup.
