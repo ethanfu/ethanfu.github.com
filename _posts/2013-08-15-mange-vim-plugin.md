@@ -43,6 +43,7 @@ Vim 来安装插件大家最通用的有两个选择：1、使用Vundle，简单
 	nnoremap <leader>t gt  
 	nnoremap <leader>r gT
 最后我把tab切换的也贴了上去，这个是我的个人习惯，大家可以随意。这里我按照上面配置就是在打开的vim窗口中执行`,+t`就可以在左侧显示文件目录了。如下图所示（这里我借用的是[老池](http://www.weibo.com/idreamland)的图片，哈哈）：
+
 ![image](http://gap.use.com.cn/wikiattach/chijianqiang/attachments/tree.png)
 
 然后主要操作有以下几个：
