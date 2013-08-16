@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Using spring mapping to root in web.xml handle static resources"
+title: "设计Rest风格的URL配置servlet-mapping拦截为根，如何处理静态内容和jsp等资源"
 description: ""
 category: Java
 tags: [SpringMVC，Spring,java]
