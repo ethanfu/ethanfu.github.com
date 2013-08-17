@@ -16,12 +16,12 @@ tags: [maven,tool]
 
 >这里解释下这里为什么单独谈到 jetty:run 。首先 jetty 支持 war 的 overlays 特性，这点 Tomcat 的插件不支持。其次就是运行的时候webapp直接指向了 /src/main/webapp ,这样你jsp等静态资源修改肯定是直接生效的，开发所必须的，当然这个特性 Tomcat 插件也一样支持的。由于overlays我暂时必须选择jetty，如果你的项目不需要这个特性，那么我说的 jetty:run ,你也可以理解为 tomcat6:run 等都是等价的。
 
-再后来就又有了新的插件，叫 [portable-config-maven-plugin](https://github.com/juven/portable-config-maven-plugin) ，这个插件的主要优点分以下几点来说吧：
+再后来就又有了新的插件，叫 [portable-config-maven-plugin](https://github.com/juven/portable-config-maven-plugin) ，这个插件的优点暂时总结为两点：
 
-1. 不需要占位符，是根据规则匹配之后完成替换，你的版本库中存的再也不是占位符了
-2. 可以替换的不仅仅是resource，神马文件你随意，格式的话有限制，主要包括properties、xml以shell，shell部分主要是变量替换，不过我觉得这个特征反而是最有竞争力的
+* 不需要占位符，是根据规则匹配之后完成替换，你的版本库中存的再也不是占位符了；
+* 可以替换的不仅仅是resource，这个主要是针对war打包而用，所以最终要打在war包的文件都可以支持，只是文件类型有限制，主要包括properties、xml以shell。我很喜欢这个特征。
 
-大体基本就这些，具体的一些对比的情况我列举几个应用场景来做阐述，这样的话大家应该会更明白一些。
+大体介绍基本就这些，具体我列举几个应用场景来做下阐述，这样的话大家应该会更明白一些。
 
 ## 几个场景
 
@@ -47,10 +47,12 @@ tags: [maven,tool]
 依然和上面一样，两种方式一个一个说：
 
 **resource filter:** 这个方式在处理这个场景还是非常棒的，即便你团队每个人的开发环境都不一样，也一样轻松应对。
-**portable-config-maven-plugin:** 这个场景下其实相比上一种方式应该要落下风的，区别就是占位符和不是占位符，个人感觉本质上区别不大。
+**portable-config-maven-plugin:** 这个场景下其实相比上一种方式差不多，区别就是占位符和不是占位符，个人感觉本质上区别不大。
 
 ### 场景3
-**场景描述:** 假设一个上述两个场景的结合体，在这种情况下其实使用的话需要根据个人喜好了，不过最简单有效的方式应该还是 portable-config-maven-plugin 来处理你第一个场景的方式，resource的使用filter来做，现在 portable-config-maven-plugin 还暂时不支持resource部分的替换，不过可能很快就支持了，如果支持的话应该只是使用 portable-config-maven-plugin 就足够了。
+**场景描述:** 假设一个上述两个场景的结合体，在这种情况下其实使用的话需要根据个人喜好了，不过最简单有效的方式应该还是 portable-config-maven-plugin 来处理就可以了，resource需要根据环境的部分本地去运行的时候使用的就是你 VCS 里面的版本，而打包到不同环境的时候这个插件足以满足需求。
+
+> 这里其实可以看到 portable-config-maven-plugin 还有个约定，就是约定所有开发人员的开发环境都是一致的配置，这样就可以把这个信息放在 VCS 上，而不是像filter一样，在 VCS 上存的是占位符的版本。这个插件主要的目的还是打出来的 war 包是支持各种环境。
 
 ## 最后
 
