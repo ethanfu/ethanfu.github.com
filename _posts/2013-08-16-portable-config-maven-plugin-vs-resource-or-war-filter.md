@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "portable-config-maven-plugin 与 resource filter 方式对比"
+title: "portable-config-maven-plugin 与 resource filter 对比"
 description: ""
 category: tool
 tags: [maven,tool]
